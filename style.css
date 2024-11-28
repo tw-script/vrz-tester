@@ -1,0 +1,149 @@
+/* タイトル */
+h1
+{
+    font-size: 2rem;
+    margin: 0.5rem;
+    text-align: center;
+}
+
+/* 接続ボタン */
+#connect
+{
+    background-color: #00C;
+    color: #FFF;
+    width: 2em;
+    padding: 0 0.5em;
+    margin: 0.5rem auto;
+    display: block;
+    border-radius: 2em;
+    border-style: none;
+}
+
+/* 機器リスト */
+#list
+{
+    text-align: center;
+    margin: 0.5rem;
+}
+
+/* 値入力欄 */
+input[type="text"]
+{
+    background-color: #FFF;
+    color: #000;
+    width: 3em;
+    padding: 0 0.5em;
+    margin: 0.25rem;
+    border-radius: 0.25em;
+    border-style: none;
+}
+
+/* 値書き込みボタン */
+.UFOSA.write
+{
+    background-color: #609;
+}
+.UFO-TW.write
+{
+    background-color: #909;
+}
+.CycSA.write
+{
+    background-color: #069;
+}
+.VorzePiston.write
+{
+    background-color: #009;
+}
+.write
+{
+    background-color: #999;
+    color: #FFF;
+    width: 6em;
+    padding: 0 0.5em;
+    margin: 0.25rem;
+    border-radius: 1em;
+    border-style: none;
+}
+
+/* 押下時のボタン */
+input[type="button"]:active
+{
+    color: #000;
+}
+
+/* 情報欄 */
+#info
+{
+    background-color: #333;
+    color: #999;
+    padding: 0.5em;
+    margin: 0.5rem;
+    border-radius: 0.5em;
+    border-style: none;
+}
+
+/* 段落 */
+p
+{
+    margin: 0 0.5rem;
+}
+
+/* 強調表示 */
+em
+{
+    background-color: #666;
+    color: #CCC;
+    font-style:normal;
+    font-weight: normal;
+    padding: 0 0.5em;
+    border-radius: 0.25em;
+}
+.connect
+{
+    background-color: #33C;
+    color: #FFF;
+    border-radius: 1em;
+    width: 2em;
+}
+.device
+{
+    background-color: #666;
+    color: #FFF;
+    border-radius: 1em;
+}
+.topic
+{
+    background-color: #CCC;
+    color: #333;
+}
+
+/* 全体 */
+body
+{
+    background-color: #000;
+    color: #FFF;
+    width: 100%;
+    height: 100%;
+    font-size: 20pt;
+    font-family: sans-serif;
+}
+
+/* 全体を囲う物 */
+html
+{
+    width: 100%;
+    height: 100%;
+}
+
+/* 全ての要素 */
+*
+{
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+    font-weight: normal;
+    line-height: 1.5em;
+    box-sizing: border-box;
+    touch-action: manipulation;
+}

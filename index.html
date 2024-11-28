@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Vrz Tester</title>
+	    <link href="./icon.png" rel="icon">
+	    <link href="./style.css" rel="stylesheet">
+        <script src="./main.js" defer></script>
+    </head>
+    <body>
+        <h1>Vrz Tester</h1>
+        <div id="list"></div>
+        <input value="+" id="connect" type="button">
+        <div id="info">
+            <p>
+                <em class="connect">+</em>ボタンを押し、機器の電源を入れると、
+                機器を選択するダイアログが現れるので、接続してください。
+                しばらくすると、
+                3つのバイト値(各16進の <em>00-FF</em> の値)を入力する欄と、
+                <em class="device">機種名が書かれた書き込みボタン</em> が現れます。
+            </p>
+            <p>
+                <em class="topic">1バイト目</em> は機種によって固定で、
+                CycSA の場合は <em>01</em> 、
+                UFOSA の場合は <em>02</em> 、
+                VorzePiston の場合は <em>03</em> 、
+                UFO-TW の場合は <em>05</em> と入力してください。
+            </p>
+            <p>
+                <em class="topic">2バイト目</em> は、例えば
+                VorzePiston の場合は移動先の位置です。
+                UFO-TW の場合は親機（先に電源を入れた方）の回転方向と回転速度です。
+                UFOSA の場合は <em>01</em> で固定です。
+                CycSA の場合も <em>01</em> で固定です。
+            </p>
+            <p>
+                <em class="topic">3バイト目</em> は、例えば
+                VorzePiston の場合は移動速度です。
+                UFO-TW の場合は子機（後に電源を入れた方）の回転方向と回転速度です。
+                CycSA の場合は回転方向と回転速度です。
+                UFOSA の場合も回転方向と回転速度です。
+            </p>
+            <p>
+                <em class="topic">回転の方向と速度</em>は、次のように指定します。
+                <em>00-64</em> の100段階で時計回り、
+                <em>80-E4</em> の100段階で反時計回りです。 
+            </p>
+            <p>
+                <em class="topic">移動先の位置と移動速度</em>は <em>00-FF</em> で256段階のようです。
+                情報が不足しているので、詳細は不明です。
+            </p>
+        </div>
+    </body>
+</html>
