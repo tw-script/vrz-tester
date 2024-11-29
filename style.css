@@ -22,10 +22,9 @@ h1
 /* 接続ボタン */
 #connect
 {
-    background-color: #00C;
-    color: #FFF;
-    padding: 0 0.5em;
-    width: 18.5em;
+    background-color: #009;
+    color: #CCF;
+    width: 12em;
     border-radius: 0.25em;
     border-style: none;
 }
@@ -74,19 +73,19 @@ input[type="submit"]
 /* 値書き込みボタン */
 .UFOSA.button
 {
-    background-color: #609;
+    background-color: #60C;
 }
 .UFO-TW.button
 {
-    background-color: #909;
+    background-color: #C0C;
 }
 .CycSA.button
 {
-    background-color: #069;
+    background-color: #06C;
 }
 .VorzePiston.button
 {
-    background-color: #009;
+    background-color: #00C;
 }
 
 /* 押下時のボタン */
@@ -123,8 +122,8 @@ em
 }
 .connect
 {
-    background-color: #00C;
-    color: #FFF;
+    background-color: #009;
+    color: #CCF;
     width: 2em;
 }
 .write
