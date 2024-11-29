@@ -1,7 +1,6 @@
 /* 全体を囲うブロック */
 #wrap
 {
-    max-width: 95svmin;
     margin: auto;
 }
 
