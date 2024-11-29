@@ -10,12 +10,19 @@ const list = {}
 // 値の書き込み
 const write = async(e) =>
 {
-    const item = list[e.target.value]
+    // フォーム送信をキャンセル
+    e.stopPropagation()
+    e.preventDefault()
+
+    // リストから機器情報を取得
+    const item = list[e.target.children[3].value]
+
+    // バイト値を書き込み
     const byte = new Uint8Array
     ([
-        parseInt(item.byte0Text.value, 16),
-        parseInt(item.byte1Text.value, 16),
-        parseInt(item.byte2Text.value, 16),
+        parseInt(e.target.children[0].value, 16),
+        parseInt(e.target.children[1].value, 16),
+        parseInt(e.target.children[2].value, 16),
     ])
     await item.characteristic.writeValue(byte)
 }
@@ -23,8 +30,13 @@ const write = async(e) =>
 // 切断
 const disconnect = async(e) =>
 {
+    // リストから機器情報を取得
     const item = list[e.currentTarget.name]
+
+    // フォームを消す
     item.form.remove()
+
+    // リストから機器を削除
     list[e.currentTarget.name] = null
 }
 
@@ -49,7 +61,7 @@ const connect = async() =>
     const item = {}
     
     // 接続ボタンの見た目をNow Connectingに変更する
-    connectButton.value = 'Now Connecting'
+    connectButton.value = 'Now Connecting...'
 
     // 接続
     item.server = await device.gatt.connect()
@@ -90,7 +102,7 @@ const connect = async() =>
     list[device.name] = item
 
     // 書き込みボタン押下イベントに登録
-    writeButton.addEventListener('click', write)
+    form.addEventListener('submit', write)
 
     // 切断イベントに登録
     device.addEventListener('gattserverdisconnected', disconnect);
