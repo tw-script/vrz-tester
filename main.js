@@ -8,7 +8,7 @@ const listDiv = document.querySelector('#list')
 const list = {}
 
 // 値の書き込み
-const writeValue = async(e) =>
+const write = async(e) =>
 {
     const item = list[e.target.value]
     const byte = new Uint8Array
@@ -31,6 +31,7 @@ const disconnect = async(e) =>
 // 接続
 const connect = async() =>
 {
+
     // Vorze機器で固定の値
     const SERVICE_UUID = '40ee1111-63ec-4b7f-8ce7-712efd55b90e'
     const CHARACTERISTIC_UUID = '40ee2222-63ec-4b7f-8ce7-712efd55b90e'
@@ -46,6 +47,9 @@ const connect = async() =>
     
     // 機器のオブジェクト
     const item = {}
+    
+    // 接続ボタンの見た目をNow Connectingに変更する
+    connectButton.value = 'Now Connecting'
 
     // 接続
     item.server = await device.gatt.connect()
@@ -54,42 +58,46 @@ const connect = async() =>
 
     // 入力欄とボタンを用意
     const div = document.createElement('div')
-    const byte0 = document.createElement('input')
-    byte0.type = 'text'
-    byte0.maxLength = 2
-    const byte1 = document.createElement('input')
-    byte1.type = 'text'
-    byte1.maxLength = 2
-    const byte2 = document.createElement('input')
-    byte2.type = 'text'
-    byte2.maxLength = 2
-    const write = document.createElement('input')
-    write.type = 'button'
-    write.value = device.name
-    write.classList.add('write')
-    write.classList.add(device.name)
+    const byte0Text = document.createElement('input')
+    byte0Text.type = 'text'
+    byte0Text.maxLength = 2
+    const byte1Text = document.createElement('input')
+    byte1Text.type = 'text'
+    byte1Text.maxLength = 2
+    const byte2Text = document.createElement('input')
+    byte2Text.type = 'text'
+    byte2Text.maxLength = 2
+    const writeButton = document.createElement('input')
+    writeButton.type = 'button'
+    writeButton.value = device.name
+    writeButton.classList.add('button')
+    writeButton.classList.add(device.name)
 
     // 画面上に入力欄とボタンを表示
-    div.append(byte0)
-    div.append(byte1)
-    div.append(byte2)
-    div.append(write)
+    div.append(byte0Text)
+    div.append(byte1Text)
+    div.append(byte2Text)
+    div.append(writeButton)
     listDiv.append(div)
 
     // 表示した要素を機器のオブジェクトに保存
-    item.byte0Text = byte0
-    item.byte1Text = byte1
-    item.byte2Text = byte2
+    item.byte0Text = byte0Text
+    item.byte1Text = byte1Text
+    item.byte2Text = byte2Text
     item.div = div
 
     // 機器リストに入れる
     list[device.name] = item
 
     // 書き込みボタン押下イベントに登録
-    write.addEventListener('click', writeValue)
+    writeButton.addEventListener('click', write)
 
     // 切断イベントに登録
     device.addEventListener('gattserverdisconnected', disconnect);
+    
+    // 接続ボタンの見た目をConnectに戻す
+    connectButton.value = 'Connect'
 }
+
 // 接続ボタン押下イベントに登録
 connectButton.addEventListener('click', connect)

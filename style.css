@@ -1,3 +1,10 @@
+/* 全体を囲うブロック */
+#wrap
+{
+    max-width: 95svmin;
+    margin: auto;
+}
+
 /* タイトル */
 h1
 {
@@ -6,16 +13,20 @@ h1
     text-align: center;
 }
 
+/* 接続ボタンを囲うもの */
+#wrap-connect
+{
+    text-align: center;
+}
+
 /* 接続ボタン */
 #connect
 {
     background-color: #00C;
     color: #FFF;
-    width: 2em;
     padding: 0 0.5em;
-    margin: 0.5rem auto;
-    display: block;
-    border-radius: 2em;
+    width: 18.5em;
+    border-radius: 0.25em;
     border-style: none;
 }
 
@@ -26,6 +37,12 @@ h1
     margin: 0.5rem;
 }
 
+/* バイト値欄と書き込みボタンを囲うもの */
+#list div
+{
+    margin: 0.5rem;
+}
+
 /* 値入力欄 */
 input[type="text"]
 {
@@ -33,37 +50,39 @@ input[type="text"]
     color: #000;
     width: 3em;
     padding: 0 0.5em;
-    margin: 0.25rem;
+    margin: 0 0.25em;
+    border-radius: 0.25em;
+    border-style: none;
+}
+
+/* ボタン */
+input[type="button"]
+{
+    background-color: #999;
+    color: #FFF;
+    width: 8em;
+    padding: 0 0.5em;
+    margin: 0 0.25em;
     border-radius: 0.25em;
     border-style: none;
 }
 
 /* 値書き込みボタン */
-.UFOSA.write
+.UFOSA.button
 {
     background-color: #609;
 }
-.UFO-TW.write
+.UFO-TW.button
 {
     background-color: #909;
 }
-.CycSA.write
+.CycSA.button
 {
     background-color: #069;
 }
-.VorzePiston.write
+.VorzePiston.button
 {
     background-color: #009;
-}
-.write
-{
-    background-color: #999;
-    color: #FFF;
-    width: 6em;
-    padding: 0 0.5em;
-    margin: 0.25rem;
-    border-radius: 1em;
-    border-style: none;
 }
 
 /* 押下時のボタン */
@@ -72,10 +91,16 @@ input[type="button"]:active
     color: #000;
 }
 
+/* 第2タイトル */
+h2
+{
+    color: #FFF;
+    font-size: 1rem;
+}
+
 /* 情報欄 */
 #info
 {
-    background-color: #333;
     color: #999;
     padding: 0.5em;
     margin: 0.5rem;
@@ -83,16 +108,10 @@ input[type="button"]:active
     border-style: none;
 }
 
-/* 段落 */
-p
-{
-    margin: 0 0.5rem;
-}
-
 /* 強調表示 */
 em
 {
-    background-color: #666;
+    background-color: #333;
     color: #CCC;
     font-style:normal;
     font-weight: normal;
@@ -101,16 +120,14 @@ em
 }
 .connect
 {
-    background-color: #33C;
+    background-color: #00C;
     color: #FFF;
-    border-radius: 1em;
     width: 2em;
 }
-.device
+.write
 {
     background-color: #666;
     color: #FFF;
-    border-radius: 1em;
 }
 .topic
 {
@@ -129,7 +146,7 @@ body
     font-family: sans-serif;
 }
 
-/* 全体を囲う物 */
+/* 全体を囲うHTML */
 html
 {
     width: 100%;
@@ -143,7 +160,7 @@ html
     padding: 0;
     font-size: 1rem;
     font-weight: normal;
-    line-height: 1.5em;
+    line-height: 2em;
     box-sizing: border-box;
     touch-action: manipulation;
 }
