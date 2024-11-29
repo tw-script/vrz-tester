@@ -9,4 +9,4 @@ Cyclone-SA,
 UFO-SA
 に対応しています。
 
-[VRZ Tester](https://tw-script.github.io/vrz-tester/)
+[VRZ Tester](https://vulpine-vixen.github.io/vrz-tester/)
