@@ -28,7 +28,7 @@ const write = async(e) =>
 }
 
 // 切断
-const disconnect = async(e) =>
+const disconnect = (e) =>
 {
     // リストから機器情報を取得
     const item = list[e.currentTarget.name]
@@ -43,7 +43,6 @@ const disconnect = async(e) =>
 // 接続
 const connect = async() =>
 {
-
     // Vorze機器で固定の値
     const SERVICE_UUID = '40ee1111-63ec-4b7f-8ce7-712efd55b90e'
     const CHARACTERISTIC_UUID = '40ee2222-63ec-4b7f-8ce7-712efd55b90e'
