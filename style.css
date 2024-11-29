@@ -96,12 +96,15 @@ input[type="button"]:active
 /* 第2タイトル */
 h2
 {
+    padding: 0 0.5em;
+    margin: 0.5em 0 0 0;
     color: #96C;
     font-size: 1rem;
+    text-align: center;
 }
 
 /* 情報欄 */
-#info
+#how-to-use
 {
     color: #999;
     padding: 0 0.5em;
