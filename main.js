@@ -5,7 +5,7 @@ const connectButton = document.querySelector('#connect')
 const listDiv = document.querySelector('#list')
 
 // 接続済みの機種リストのオブジェクト
-const list = {}
+const deviceObject = {}
 
 // 値の書き込み
 const write = async(e) =>
@@ -15,7 +15,7 @@ const write = async(e) =>
     e.preventDefault()
 
     // リストから機器情報を取得
-    const item = list[e.target.children[3].value]
+    const d = deviceObject[e.target.children[3].value]
 
     // バイト値を書き込み
     const byte = new Uint8Array
@@ -24,20 +24,20 @@ const write = async(e) =>
         parseInt(e.target.children[1].value, 16),
         parseInt(e.target.children[2].value, 16),
     ])
-    await item.characteristic.writeValue(byte)
+    await d.characteristic.writeValue(byte)
 }
 
 // 切断
 const disconnect = (e) =>
 {
     // リストから機器情報を取得
-    const item = list[e.currentTarget.name]
+    const d = deviceObject[e.currentTarget.name]
 
     // フォームを消す
-    item.form.remove()
+    d.form.remove()
 
     // リストから機器を削除
-    list[e.currentTarget.name] = null
+    deviceObject[e.currentTarget.name] = null
 }
 
 // 接続
@@ -54,18 +54,18 @@ const connect = async() =>
     })
 
     // 既にリストにあったら終わり
-    if(list[device.name]) return
+    if(deviceObject[device.name]) return
     
     // 機器のオブジェクト
-    const item = {}
+    const d = {}
     
     // 接続ボタンの見た目をNow Connectingに変更する
     connectButton.value = 'Now Connecting...'
 
     // 接続
-    item.server = await device.gatt.connect()
-    item.service = await item.server.getPrimaryService(SERVICE_UUID)
-    item.characteristic = await item.service.getCharacteristic(CHARACTERISTIC_UUID)
+    d.server = await device.gatt.connect()
+    d.service = await d.server.getPrimaryService(SERVICE_UUID)
+    d.characteristic = await d.service.getCharacteristic(CHARACTERISTIC_UUID)
 
     // フォームと入力欄とボタンを用意
     const form = document.createElement('form')
@@ -92,13 +92,13 @@ const connect = async() =>
     listDiv.append(form)
 
     // 表示した要素を機器のオブジェクトに保存
-    item.byte0Text = byte0Text
-    item.byte1Text = byte1Text
-    item.byte2Text = byte2Text
-    item.form = form
+    d.byte0Text = byte0Text
+    d.byte1Text = byte1Text
+    d.byte2Text = byte2Text
+    d.form = form
 
     // 機器リストに入れる
-    list[device.name] = item
+    deviceObject[device.name] = d
 
     // 書き込みボタン押下イベントに登録
     form.addEventListener('submit', write)
@@ -112,3 +112,17 @@ const connect = async() =>
 
 // 接続ボタン押下イベントに登録
 connectButton.addEventListener('click', connect)
+
+// 使い方開閉ボタン
+const howToUseButton = document.querySelector('#how-to-use-button')
+const howToUseDiv = document.querySelector('#how-to-use')
+
+// 使い方開閉
+const openCloseHowToUse = (e) =>
+{
+    howToUseButton.classList.toggle('opened')
+    howToUseDiv.classList.toggle('opened')
+}
+
+// 開閉ボタン押下イベントに登録
+howToUseButton.addEventListener('click', openCloseHowToUse)
