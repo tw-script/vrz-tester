@@ -138,6 +138,21 @@ em
     color: #333;
 }
 
+a
+{
+    background-color: #FFF;
+    color: #000;
+    padding: 0 0.5em;
+    border-radius: 0.25em;
+    border-style: none;
+    text-decoration: none;
+}
+
+.right
+{
+    text-align: right;
+}
+
 /* 全体 */
 body
 {
