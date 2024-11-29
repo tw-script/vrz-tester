@@ -7,6 +7,7 @@
 /* タイトル */
 h1
 {
+    color: #96C;
     font-size: 2rem;
     margin: 0.5rem;
     text-align: center;
@@ -97,7 +98,7 @@ input[type="button"]:active
 /* 第2タイトル */
 h2
 {
-    color: #FFF;
+    color: #96C;
     font-size: 1rem;
 }
 
@@ -105,8 +106,7 @@ h2
 #info
 {
     color: #999;
-    padding: 0.5em;
-    margin: 0.5rem;
+    padding: 0 0.5em;
     border-radius: 0.5em;
     border-style: none;
 }
@@ -141,8 +141,8 @@ em
 /* リンク */
 a
 {
-    background-color: #FFF;
-    color: #000;
+    background-color: #639;
+    color: #C9F;
     padding: 0 0.5em;
     border-radius: 0.25em;
     border-style: none;
@@ -154,17 +154,8 @@ body
 {
     background-color: #000;
     color: #FFF;
-    width: 100%;
-    height: 100%;
     font-size: 14pt;
     font-family: sans-serif;
-}
-
-/* 全体を囲うHTML */
-html
-{
-    width: 100%;
-    height: 100%;
 }
 
 /* 全ての要素 */
