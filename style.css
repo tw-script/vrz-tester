@@ -138,6 +138,7 @@ em
     color: #333;
 }
 
+/* リンク */
 a
 {
     background-color: #FFF;
@@ -146,11 +147,6 @@ a
     border-radius: 0.25em;
     border-style: none;
     text-decoration: none;
-}
-
-.right
-{
-    text-align: right;
 }
 
 /* 全体 */
