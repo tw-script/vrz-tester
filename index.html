@@ -10,61 +10,59 @@
         <script src="./main.js" defer></script>
     </head>
     <body>
-        <div id="wrap">
-            <h1>VRZ Tester 0.0.1</h1>
-            <div id="list"></div>
-            <div id="wrap-connect">
-                <input value="Connect" id="connect" type="button">
-            </div>
-            <div id="info">
-                <h2>詳しい使い方</h2>
-                <p>
-                    <em class="topic">対応ブラウザ</em> は、
-                    PC の <em>Chrome</em> 、 <em>Edge</em> 、
-                    Android の <em>Chrome</em> 、 <em>Edge</em> 、
-                    iOS の <em>Bluefy</em> などです。
-                </p>
-                <p>
-                    <em class="connect">Connect</em> ボタンを押し、機器の電源を入れると、
-                    機器を選択するダイアログが現れるので、選択して接続してください。
-                    しばらくすると、
-                    3つのバイト値（各16進の <em>00-FF</em> の値）を入力する欄と、
-                    機種名が書かれた <em class="write">書き込みボタン</em> が現れます。
-                    3つの値を機器に送信していきます。
-                </p>
-                <p>
-                    <em class="topic">1バイト目</em> は機種によって固定で、
-                    CycSA の場合は <em>01</em> 、
-                    UFOSA の場合は <em>02</em> 、
-                    VorzePiston の場合は <em>03</em> 、
-                    UFO-TW の場合は <em>05</em> と入力してください。
-                </p>
-                <p>
-                    <em class="topic">2バイト目</em> は、例えば
-                    VorzePiston の場合はピストンの <em>移動先の位置</em> です。
-                    UFO-TW の場合は親機（先に電源を入れた方）の <em>回転方向と回転速度</em> です。
-                    UFOSA と CycSA の場合は固定で <em>01</em> と入力してください。
-                </p>
-                <p>
-                    <em class="topic">3バイト目</em> は、例えば
-                    VorzePiston の場合はピストンの <em>移動速度</em> です。
-                    UFO-TW の場合は子機（後に電源を入れた方）の <em>回転方向と回転速度</em> です。
-                    CycSA と UFOSA の場合も <em>回転方向と回転速度</em> です。
-                </p>
-                <p>
-                    <em class="topic">回転方向と回転速度</em> は、
-                    <em>00-64</em> の101段階で時計回り、
-                    <em>80-E4</em> の101段階で反時計回りです。
-                </p>
-                <p>
-                    <em class="topic">移動先の位置と移動速度</em> は <em>00-FF</em> で256段階のようです。
-                </p>
-                <p>
-                    <em class="write">書き込みボタン</em> を押すと、
-                    VorzePiston の場合は移動先まで移動し、
-                    それ以外の場合は回転し続けます。
-                </p>
-            </div>
+        <h1>VRZ Tester 0.0.1</h1>
+        <div id="list"></div>
+        <div id="wrap-connect">
+            <input value="Connect" id="connect" type="button">
+        </div>
+        <div id="info">
+            <h2>詳しい使い方</h2>
+            <p>
+                <em class="topic">対応ブラウザ</em> は、
+                PC の <em>Chrome</em> 、 <em>Edge</em> 、
+                Android の <em>Chrome</em> 、 <em>Edge</em> 、
+                iOS の <em>Bluefy</em> などです。
+            </p>
+            <p>
+                <em class="connect">Connect</em> ボタンを押し、機器の電源を入れると、
+                機器を選択するダイアログが現れるので、選択して接続してください。
+                しばらくすると、
+                3つのバイト値（各16進の <em>00-FF</em> の値）を入力する欄と、
+                機種名が書かれた <em class="write">書き込みボタン</em> が現れます。
+                3つの値を機器に送信していきます。
+            </p>
+            <p>
+                <em class="topic">1バイト目</em> は機種によって固定で、
+                CycSA の場合は <em>01</em> 、
+                UFOSA の場合は <em>02</em> 、
+                VorzePiston の場合は <em>03</em> 、
+                UFO-TW の場合は <em>05</em> と入力してください。
+            </p>
+            <p>
+                <em class="topic">2バイト目</em> は、例えば
+                VorzePiston の場合はピストンの <em>移動先の位置</em> です。
+                UFO-TW の場合は親機（先に電源を入れた方）の <em>回転方向と回転速度</em> です。
+                UFOSA と CycSA の場合は固定で <em>01</em> と入力してください。
+            </p>
+            <p>
+                <em class="topic">3バイト目</em> は、例えば
+                VorzePiston の場合はピストンの <em>移動速度</em> です。
+                UFO-TW の場合は子機（後に電源を入れた方）の <em>回転方向と回転速度</em> です。
+                CycSA と UFOSA の場合も <em>回転方向と回転速度</em> です。
+            </p>
+            <p>
+                <em class="topic">回転方向と回転速度</em> は、
+                <em>00-64</em> の101段階で時計回り、
+                <em>80-E4</em> の101段階で反時計回りです。
+            </p>
+            <p>
+                <em class="topic">移動先の位置と移動速度</em> は <em>00-FF</em> で256段階のようです。
+            </p>
+            <p>
+                <em class="write">書き込みボタン</em> を押すと、
+                VorzePiston の場合は移動先まで移動し、
+                それ以外の場合は回転し続けます。
+            </p>
         </div>
     </body>
 </html>

@@ -37,7 +37,7 @@ h1
 }
 
 /* バイト値欄と書き込みボタンを囲うもの */
-#list div
+form
 {
     margin: 0.5rem;
 }
@@ -48,18 +48,22 @@ input[type="text"]
     background-color: #FFF;
     color: #000;
     width: 3em;
+    height: 2em;
     padding: 0 0.5em;
     margin: 0 0.25em;
     border-radius: 0.25em;
     border-style: none;
+    display: inline-block;
 }
 
 /* ボタン */
-input[type="button"]
+input[type="button"],
+input[type="submit"]
 {
     background-color: #999;
     color: #FFF;
     width: 8em;
+    height: 2em;
     padding: 0 0.5em;
     margin: 0 0.25em;
     border-radius: 0.25em;

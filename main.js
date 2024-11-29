@@ -24,7 +24,7 @@ const write = async(e) =>
 const disconnect = async(e) =>
 {
     const item = list[e.currentTarget.name]
-    item.div.remove()
+    item.form.remove()
     list[e.currentTarget.name] = null
 }
 
@@ -56,8 +56,8 @@ const connect = async() =>
     item.service = await item.server.getPrimaryService(SERVICE_UUID)
     item.characteristic = await item.service.getCharacteristic(CHARACTERISTIC_UUID)
 
-    // 入力欄とボタンを用意
-    const div = document.createElement('div')
+    // フォームと入力欄とボタンを用意
+    const form = document.createElement('form')
     const byte0Text = document.createElement('input')
     byte0Text.type = 'text'
     byte0Text.maxLength = 2
@@ -68,23 +68,23 @@ const connect = async() =>
     byte2Text.type = 'text'
     byte2Text.maxLength = 2
     const writeButton = document.createElement('input')
-    writeButton.type = 'button'
+    writeButton.type = 'submit'
     writeButton.value = device.name
     writeButton.classList.add('button')
     writeButton.classList.add(device.name)
 
     // 画面上に入力欄とボタンを表示
-    div.append(byte0Text)
-    div.append(byte1Text)
-    div.append(byte2Text)
-    div.append(writeButton)
-    listDiv.append(div)
+    form.append(byte0Text)
+    form.append(byte1Text)
+    form.append(byte2Text)
+    form.append(writeButton)
+    listDiv.append(form)
 
     // 表示した要素を機器のオブジェクトに保存
     item.byte0Text = byte0Text
     item.byte1Text = byte1Text
     item.byte2Text = byte2Text
-    item.div = div
+    item.form = form
 
     // 機器リストに入れる
     list[device.name] = item
