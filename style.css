@@ -132,6 +132,11 @@ em
     background-color: #666;
     color: #FFF;
 }
+.byte
+{
+    background-color: #FFF;
+    color: #000;
+}
 .topic
 {
     background-color: #CCC;
