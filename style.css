@@ -1,7 +1,7 @@
 /* タイトル */
 h1
 {
-    color: #96C;
+    color: #C9F;
     margin: 0.5rem;
     text-align: center;
 }
@@ -55,7 +55,7 @@ input[type="submit"]
     color: #FFF;
     border-color: #FFF;
     width: 8em;
-    padding: 0.25em;
+    padding: 0.25em 0;
     margin: 0 0.25em;
     border-radius: 0.25em;
     border-style: none;
@@ -91,43 +91,16 @@ input[type="submit"]:active
 /* 第2タイトル */
 h2
 {
-    text-align: center;
-    margin: 1em 0 0.25em 0;
-}
-
-/* 使い方開閉ボタン */
-#how-to-use-button.opened
-{
-    background-color: #306;
-    color: #96C;
-    border-color: #96C;
-}
-#how-to-use-button
-{
-    background-color: #639;
     color: #C9F;
-    border-color: #C9F;
-}
-
-/* 情報欄 */
-#how-to-use.opened
-{
-    display: block;
-    color: #999;
-    padding: 0 0.5em;
-    border-radius: 0.5em;
-    border-style: none;
-}
-#how-to-use
-{
-    display: none;
+    margin: 0.5em 0.5em;
+    text-align: center;
 }
 
 /* 強調表示 */
 em
 {
-    background-color: #333;
-    color: #CCC;
+    background-color: #639;
+    color: #C9F;
     font-style: normal;
     font-weight: normal;
     padding: 0 0.25em;
@@ -141,18 +114,18 @@ em
 }
 .write
 {
-    background-color: #666;
+    background-color: #60C;
     color: #FFF;
 }
 .byte
 {
     background-color: #FFF;
-    color: #000;
+    color: #333;
 }
 .topic
 {
-    background-color: #CCC;
-    color: #333;
+    background-color: #96C;
+    color: #000;
 }
 
 /* リンク */
@@ -169,6 +142,40 @@ a:active
 {
     background-color: #C9F;
     color: #639;
+}
+
+/* 使い方、リンク開閉ボタン */
+#how-to-use-button.opened,
+#link-button.opened
+{
+    background-color: #306;
+    color: #96C;
+    border-color: #96C;
+}
+#how-to-use-button,
+#link-button
+{
+    background-color: #96C;
+    color: #306;
+    border-color: #306;
+}
+
+/* 使い方、リンク */
+#how-to-use.opened,
+#link.opened
+{
+    background-color: #306;
+    color: #C9F;
+    padding: 0 0.5em;
+    display: block;
+    margin: 0 1rem;
+    border-radius: 0.5em;
+    border-style: none;
+}
+#how-to-use,
+#link
+{
+    display: none;
 }
 
 /* 全体 */

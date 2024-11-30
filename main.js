@@ -113,7 +113,9 @@ const connect = async() =>
 // 接続ボタン押下イベントに登録
 connectButton.addEventListener('click', connect)
 
-// 使い方開閉ボタン
+// ここからは機器ではなくこのツール特有のプログラムです
+
+// 使い方
 const howToUseButton = document.querySelector('#how-to-use-button')
 const howToUseDiv = document.querySelector('#how-to-use')
 
@@ -124,5 +126,19 @@ const openCloseHowToUse = (e) =>
     howToUseDiv.classList.toggle('opened')
 }
 
-// 開閉ボタン押下イベントに登録
+// 使い方開閉ボタン押下イベントに登録
 howToUseButton.addEventListener('click', openCloseHowToUse)
+
+// リンク
+const linkButton = document.querySelector('#link-button')
+const linkDl = document.querySelector('#link')
+
+// リンク開閉
+const openCloseLink = (e) =>
+{
+    linkButton.classList.toggle('opened')
+    linkDl.classList.toggle('opened')
+}
+
+// リンク開閉ボタン押下イベントに登録
+linkButton.addEventListener('click', openCloseLink)

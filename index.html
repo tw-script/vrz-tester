@@ -19,10 +19,10 @@
             <p>
                 VORZE機器にBLEで値を送信して動作をテストする事ができます。
                 現在、
-                <em>A10-Piston-SA</em> ,
-                <em>UFO-TW</em> ,
-                <em>A10-Cyclone-SA</em> ,
-                <em>UFO-SA</em>
+                <em>A10 Piston SA</em> ,
+                <em>UFO TW</em> ,
+                <em>A10 Cyclone SA</em> ,
+                <em>UFO SA</em>
                 に対応しています。
             </p>
             <p>
@@ -33,9 +33,11 @@
                 アプリに付近のデバイスへ接続する権限を付与してください。
             </p>
             <p>
-                <em class="connect">Connect</em> ボタンを押し、機器の電源を入れると、
-                機器を選択するダイアログが現れるので、選択して接続してください。
-                しばらくすると、
+                <em class="connect">Connect</em> ボタンを押し、機器の電源を入れ、
+                ダイアログから機器を選択して接続してください。
+            </p>
+            <p>
+                接続が完了すると、
                 3つのバイト値（各16進の <em>00-FF</em> の値）を入力する欄と、
                 機種名が書かれた <em class="write">書き込みボタン</em> が現れます。
                 3つの値を機器に送信していきます。
@@ -72,12 +74,14 @@
                 VorzePiston の場合は移動先まで移動し、
                 それ以外の場合は回転し続けます。
             </p>
-            <p>
-                拙作ですが
-                <a href="https://github.com/vulpine-vixen/vv-tester">GitHub</a>
-                でプログラムが見れます。
-            </p>
         </div>
+        <h2><input value="外部へのリンク" id="link-button" type="button"></h2>
+        <dl id="link">
+            <dt><a href="https://github.com/vulpine-vixen/vv-tester">GitHub</a></dt>
+            <dd>拙作ですがこのツールのプログラムを見たりできます。</dd>
+            <dt><a href="https://vulpine-vixen.com/">vulpineVixen</a></dt>
+            <dd>作者の公式サイトです。</dd>
+        </dl>
         <script src="./main.js" defer></script>
     </body>
 </html>
