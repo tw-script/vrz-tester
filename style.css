@@ -2,8 +2,9 @@
 h1
 {
     color: #C9F;
-    margin: 0.5rem;
+    margin: 0.5em;
     text-align: center;
+    font-size: 1em;
 }
 
 /* 接続ボタンを囲うもの */
@@ -25,13 +26,13 @@ h1
 #list
 {
     text-align: center;
-    margin: 0.5rem;
+    margin: 0.5em;
 }
 
 /* バイト値欄と書き込みボタンを囲うもの */
 form
 {
-    margin: 0.5rem;
+    margin: 0.5em;
 }
 
 /* 値入力欄 */
@@ -45,6 +46,7 @@ input[type="text"]
     border-radius: 0.25em;
     border-style: none;
     display: inline-block;
+    font-size: 1em;
 }
 
 /* ボタン */
@@ -59,6 +61,7 @@ input[type="submit"]
     margin: 0 0.25em;
     border-radius: 0.25em;
     border-style: none;
+    font-size: 1em;
 }
 
 /* 押下時のボタン */
@@ -88,8 +91,8 @@ input[type="submit"]:active
     background-color: #00C;
 }
 
-/* 第2タイトル */
-h2
+/* 開閉ボタンを囲うもの */
+.open-close-div
 {
     color: #C9F;
     margin: 0.5em 0.5em;
@@ -168,7 +171,7 @@ a:active
     color: #C9F;
     padding: 0 0.5em;
     display: block;
-    margin: 0 1rem;
+    margin: 0 1em;
     border-radius: 0.5em;
     border-style: none;
 }
@@ -178,12 +181,18 @@ a:active
     display: none;
 }
 
+/* ブロック */
+div
+{
+    font-size: 1em;
+}
+
 /* 全体 */
 body
 {
     background-color: #000;
     color: #FFF;
-    font-size: 14pt;
+    font-size: 12pt;
     font-family: sans-serif;
 }
 
@@ -192,7 +201,6 @@ body
 {
     margin: 0;
     padding: 0;
-    font-size: 1rem;
     font-weight: normal;
     line-height: 2em;
     box-sizing: border-box;
