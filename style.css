@@ -16,9 +16,10 @@ h1
 /* 接続ボタン */
 #connect
 {
-    background-color: #009;
-    color: #CCF;
-    border-color: #CCF;
+    background-color: #639;
+    color: #C9F;
+    border-color: #C9F;
+    border-radius: 1.5em;
     width: 12em;
 }
 
@@ -74,21 +75,15 @@ input[type="submit"]:active
 }
 
 /* 値書き込みボタン */
+.UFO-TW.button,
 .UFOSA.button
 {
-    background-color: #60C;
+    background-color: #939;
 }
-.UFO-TW.button
-{
-    background-color: #C0C;
-}
+.VorzePiston.button,
 .CycSA.button
 {
-    background-color: #06C;
-}
-.VorzePiston.button
-{
-    background-color: #00C;
+    background-color: #339;
 }
 
 /* 開閉ボタンを囲うもの */
@@ -100,7 +95,7 @@ input[type="submit"]:active
 }
 
 /* 強調表示 */
-em
+span
 {
     background-color: #639;
     color: #C9F;
@@ -111,40 +106,44 @@ em
 }
 .connect
 {
-    background-color: #009;
-    color: #CCF;
-    width: 2em;
+    background-color: #639;
+    color: #C9F;
+    border-radius: 1em;
+    padding: 0 0.5em;
 }
 .write
 {
-    background-color: #60C;
-    color: #FFF;
+    background-color: #306;
+    color: #C9F;
 }
 .byte
 {
-    background-color: #FFF;
-    color: #333;
+    background-color: #C9F;
+    color: #306;
 }
 .topic
 {
     background-color: #96C;
-    color: #000;
+    color: #306;
+}
+.ufo
+{
+    background-color: #939;
+    color: #F9F;
+}
+.piston
+{
+    background-color: #339;
+    color: #99F;
 }
 
 /* リンク */
 a
 {
-    background-color: #639;
     color: #C9F;
+    border-bottom: solid 0.25em #639;
     padding: 0 0.25em;
-    border-radius: 0.25em;
-    border-style: none;
     text-decoration: none;
-}
-a:active
-{
-    background-color: #C9F;
-    color: #639;
 }
 
 /* 使い方、リンク開閉ボタン */
@@ -161,18 +160,18 @@ a:active
     background-color: #96C;
     color: #306;
     border-color: #306;
+    border-radius: 1.5em;
 }
 
 /* 使い方、リンク */
 #how-to-use.opened,
 #link.opened
 {
-    background-color: #306;
     color: #C9F;
-    padding: 0 0.5em;
+    padding: 0;
     display: block;
-    margin: 0 1em;
-    border-radius: 0.5em;
+    margin: 0 auto;
+    width: 90svmin;
     border-style: none;
 }
 #how-to-use,

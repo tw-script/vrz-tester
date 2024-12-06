@@ -5,78 +5,86 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width">
         <meta name="description" content="VORZE機器にBLEで3つのバイト値を書き込んで動作をテストする事ができるページです。">
-        <title>vV-Tester</title>
+        <title>vV Tester</title>
 	    <link href="./icon.png" rel="icon" type="image/png">
 	    <link href="./style.css" rel="stylesheet">
     </head>
     <body>
-        <h1>vV-Tester 0.0.4</h1>
+        <h1>vV Tester</h1>
         <div id="list"></div>
         <div id="wrap-connect">
             <input value="Connect" id="connect" type="button">
         </div>
-        <div class="open-close-div"><input value="詳しい使い方" id="how-to-use-button" type="button"></div>
+        <div class="open-close-div"><input value="使い方" id="how-to-use-button" type="button"></div>
         <div id="how-to-use">
             <p>
                 VORZE機器にBLEで値を書き込んで動作をテストする事ができます。
-                現在、
-                <em>A10 Piston SA</em> ,
-                <em>UFO TW</em> ,
-                <em>A10 Cyclone SA</em> ,
-                <em>UFO SA</em>
-                に対応しています。
             </p>
             <p>
-                <em class="topic">対応ブラウザ</em> は、
-                PC の <em>Chrome</em> 、 <em>Edge</em> 、
-                Android の <em>Chrome</em> 、 <em>Edge</em> 、
-                iOS の <em>Bluefy</em> などです。
+                <span class="piston">A10-PISTON-SA</span> ,
+                <span class="ufo">UFO-TW</span> ,
+                <span class="piston">A10-CYCLONE-SA</span> ,
+                <span class="ufo">UFO-SA</span>
+                に対応していますが、
+                A10-CYCLONE-SA , UFO-SA は手元に無いため、
+                正しく動作するかわかりません。
+            </p>
+            <!--p>
+                <span class="topic">対応ブラウザ</span> は、
+                PC の <span>Chrome</span> 、 <span>Edge</span> 、
+                Android の <span>Chrome</span> 、 <span>Edge</span> 、
+                iOS の <span>Bluefy</span> などです。
                 アプリに付近のデバイスへ接続する権限を付与してください。
-            </p>
+            </p-->
             <p>
-                <em class="connect">Connect</em> ボタンを押し、機器の電源を入れ、
+                <span class="connect">Connect</span> ボタンを押し、機器の電源を入れ、
                 ダイアログから機器を選択して接続してください。
             </p>
             <p>
                 接続が完了すると、
-                3つのバイト値（各16進の <em>00-FF</em> の値）を入力する欄と、
-                機種名が書かれた <em class="write">書き込みボタン</em> が現れます。
-                3つの値を機器に送信していきます。
+                3つの値（各16進の <span>00-FF</span> の値）を入力する<span class="byte">入力欄</span>と、
+                機種名が書かれた <span class="write">書き込みボタン</span> が現れます。
+                ここから3つの値を機器に送信していきます。
             </p>
             <p>
-                <em class="byte">1バイト目</em> は機種によって固定で、
-                CycSA の場合は <em>01</em> 、
-                UFOSA の場合は <em>02</em> 、
-                VorzePiston の場合は <em>03</em> 、
-                UFO-TW の場合は <em>05</em> と入力してください。
+                <span class="byte">1バイト目</span> は機種によって固定で、
+                <span class="piston">CycSA</span> の場合は <span>01</span> 、
+                <span class="ufo">UFOSA</span> の場合は <span>02</span> 、
+                <span class="piston">VorzePiston</span> の場合は <span>03</span> 、
+                <span class="ufo">UFO-TW</span> の場合は <span>05</span> と入力してください。
             </p>
             <p>
-                <em class="byte">2バイト目</em> は、
-                VorzePiston の場合はピストンの <em>移動先の位置</em> です。
-                UFO-TW の場合は親機（先に電源を入れた方）の <em>回転方向と回転速度</em> です。
-                UFOSA と CycSA の場合は固定で <em>01</em> と入力してください。
+                <span class="byte">2バイト目</span> は、
+                <span class="piston">VorzePiston</span> の場合はピストンの <span>移動先の位置</span> です。
+                <span class="ufo">UFO-TW</span> の場合は親機（先に電源を入れた方）の <span>回転方向と回転速度</span> です。
+                <span class="ufo">UFOSA</span> , <span class="ufo">CycSA</span> の場合は固定で <span>01</span> と入力してください。
             </p>
             <p>
-                <em class="byte">3バイト目</em> は、
-                VorzePiston の場合はピストンの <em>移動速度</em> です。
-                UFO-TW の場合は子機（後に電源を入れた方）の <em>回転方向と回転速度</em> です。
-                CycSA と UFOSA の場合も <em>回転方向と回転速度</em> です。
+                <span class="byte">3バイト目</span> は、
+                <span class="piston">VorzePiston</span> の場合はピストンの <span>移動の速さ</span> です。
+                <span class="ufo">UFO-TW</span> の場合は子機（後に電源を入れた方）の <span>回転方向と回転速度</span> です。
+                <span class="piston">CycSA</span> と <span class="ufo">UFOSA</span> の場合も <span>回転方向と回転速度</span> です。
             </p>
             <p>
-                <em class="topic">回転方向と回転速度</em> は、
-                <em>00-64</em> の101段階で時計回り、
-                <em>80-E4</em> の101段階で反時計回りです。
+                <span class="topic">回転方向と回転速度</span> は、
+                <span>00-64</span> の101段階で時計回り、
+                <span>80-E4</span> の101段階で反時計回りです。
             </p>
             <p>
-                <em class="topic">移動先の位置と移動速度</em> は <em>00-FF</em> で256段階のようです。
+                <span class="topic">移動先の位置と移動の速さ</span> は <span>00-FF</span> で256段階のようです。
+                ただし、位置は <span>00</span> だと停止するのに対し、
+                移動の速さは <span>00</span> を入力しても少しずつ動き始めます。
             </p>
             <p>
-                <em class="write">書き込みボタン</em> を押すと、
-                VorzePiston の場合は移動先まで移動し、
+                <span class="write">書き込みボタン</span> を押すと、
+                <span class="piston">VorzePiston</span> の場合は移動先まで移動し、
                 それ以外の場合は回転し続けます。
             </p>
+            <p>
+                それでは vV Tester をご利用ください。
+            </p>
         </div>
-        <div class="open-close-div"><input value="外部へのリンク" id="link-button" type="button"></div>
+        <div class="open-close-div"><input value="リンク" id="link-button" type="button"></div>
         <dl id="link">
             <dt><a href="https://github.com/vulpine-vixen/vv-tester">GitHub</a></dt>
             <dd>拙作ですがこのツールのプログラムを見たりできます。</dd>

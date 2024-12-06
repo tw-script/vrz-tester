@@ -104,7 +104,7 @@ const connect = async() =>
     form.addEventListener('submit', write)
 
     // 切断イベントに登録
-    device.addEventListener('gattserverdisconnected', disconnect);
+    device.addEventListener('gattserverdisconnected', disconnect)
     
     // 接続ボタンの見た目をConnectに戻す
     connectButton.value = 'Connect'
