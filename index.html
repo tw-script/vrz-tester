@@ -4,85 +4,97 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width">
-        <meta name="description" content="VORZE機器にWeb上で接続して連動するゲームやツールを公開します。">
-        <title>GitHub上で公開しているツールについて - vulpineVixen</title>
+        <meta name="description" content="VORZE機器にBLEで3つのバイト値を書き込んで動作をテストする事ができるページです。">
+        <title>vV Tester</title>
 	    <link href="./icon.png" rel="icon" type="image/png">
 	    <link href="./style.css" rel="stylesheet">
     </head>
     <body>
-        <main>
-            <div id="vv-div"><img id="vv-image" src="./icon.png" alt="Purple Fox Girl"></div>
-            <h1>GitHub上で公開しているツールについて - vulpineVixen</h1>
+        <h1>vV Tester</h1>
+        <div id="list"></div>
+        <div id="wrap-connect">
+            <input value="Connect" id="connect" type="button">
+        </div>
+        <div class="open-close-div"><input value="使い方" id="how-to-use-button" type="button"></div>
+        <div id="how-to-use">
             <p>
-                ここは私がGitHub上に公開しているツール作品について書いたページです。
-                <span class="warning">ゲームはR-18ですから自分のサイト上に公開します</span>
-                。つまりゲームはGitHub上にはありません。
+                VORZE機器にBLEで値を書き込んで動作をテストする事ができます。
             </p>
-                <h2>ツールのプログラムを利用したい方へ</h2>
-                <p>
-                    現在ここにあるツールは
-                    <span class="topic">MITライセンス</span>
-                    で公開しておりますので、
-                    プログラムを再利用していただくには
-                    <span class="topic">著作権と許諾の表示である LICENSE ファイル</span>
-                    をコピーして表記したりしていただく必要があります。
-                </p>
-                <p>
-                    ですが
-                    <span class="topic">プログラムの一部を参考にする程度</span>
-                    で、 0 からプログラムを書く方は
-                    <span class="topic">表示をしていただかなくて結構</span>
-                    です。
-                </p>
-
-                <h2>ゲームのプログラムについて</h2>
-                <p>
-                    私のサイト上に公開する
-                    <span class="warning">ゲームに関しては改造など再利用して公開する事を禁止</span>
-                    します。
-                    個人的に楽しむ分にはいいですが、
-                    再利用したものを公開しないでください。
-                </p>
-                <p>
-                    つまり、
-                    <span class="topic">再利用を許可しているのはツールのみ</span>
-                    です。
-                </p>
-                <p>
-                    あるいは、ゲームに関しても
-                    0 からプログラムを書き、
-                    画像も自分で用意したもの
-                    などにしてください。
-                </p>
-
-                <h2>リンク</h2>
-                <dl>
-                    <dt>
-                        <a href="https://github.com/vulpine-vixen">
-                            GitHub
-                        </a>
-                    </dt>
-                    <dd>
-                        ツール作品のプログラムがあります。
-                    </dd>
-                    <dt>
-                        <a href="https://www.patreon.com/c/vulpine_vixen">
-                            Patreon
-                        </a>
-                    </dt>
-                    <dd>
-                        メッセージを送ったり、支援をしてくださると嬉しいです。
-                        （※まだ支援はできません。）
-                    </dd>
-                    <dt>
-                        <a href="https://vulpine-vixen.com/">
-                            vulpineVixen
-                        </a>
-                    </dt>
-                    <dd>
-                        作者のサイトです。
-                    </dd>
-                </dl>
-        </main>
+            <p>
+                <span class="piston">A10-PISTON-SA</span> ,
+                <span class="ufo">UFO-TW</span> ,
+                <span class="piston">A10-CYCLONE-SA</span> ,
+                <span class="ufo">UFO-SA</span>
+                に対応していますが、
+                A10-CYCLONE-SA , UFO-SA は手元に無いため、
+                正しく動作するかわかりません。
+            </p>
+            <!--p>
+                <span class="topic">対応ブラウザ</span> は、
+                PC の <span>Chrome</span> 、 <span>Edge</span> 、
+                Android の <span>Chrome</span> 、 <span>Edge</span> 、
+                iOS の <span>Bluefy</span> などです。
+                アプリに付近のデバイスへ接続する権限を付与してください。
+            </p-->
+            <p>
+                <span class="connect">Connect</span> ボタンを押し、機器の電源を入れ、
+                ダイアログから機器を選択して接続してください。
+            </p>
+            <p>
+                接続が完了すると、
+                3つの値（各16進の <span>00-FF</span> の値）を入力する<span class="byte">入力欄</span>と、
+                機種名が書かれた <span class="write">書き込みボタン</span> が現れます。
+                ここから3つの値を機器に送信していきます。
+            </p>
+            <p>
+                <span class="byte">1バイト目</span> は機種によって固定で、
+                <span class="piston">CycSA</span> の場合は <span>01</span> 、
+                <span class="ufo">UFOSA</span> の場合は <span>02</span> 、
+                <span class="piston">VorzePiston</span> の場合は <span>03</span> 、
+                <span class="ufo">UFO-TW</span> の場合は <span>05</span> と入力してください。
+            </p>
+            <p>
+                <span class="byte">2バイト目</span> は、
+                <span class="piston">VorzePiston</span> の場合はピストンの <span>移動先の位置</span> です。
+                <span class="ufo">UFO-TW</span> の場合は親機（先に電源を入れた方）の <span>回転方向と回転速度</span> です。
+                <span class="ufo">UFOSA</span> , <span class="ufo">CycSA</span> の場合は固定で <span>01</span> と入力してください。
+            </p>
+            <p>
+                <span class="byte">3バイト目</span> は、
+                <span class="piston">VorzePiston</span> の場合はピストンの <span>移動の速さ</span> です。
+                <span class="ufo">UFO-TW</span> の場合は子機（後に電源を入れた方）の <span>回転方向と回転速度</span> です。
+                <span class="piston">CycSA</span> と <span class="ufo">UFOSA</span> の場合も <span>回転方向と回転速度</span> です。
+            </p>
+            <p>
+                <span class="topic">回転方向と回転速度</span> は、
+                <span>00-64</span> の101段階で時計回り、
+                <span>80-E4</span> の101段階で反時計回りです。
+            </p>
+            <p>
+                <span class="topic">移動先の位置と移動の速さ</span> は <span>00-FF</span> で256段階のようです。
+                移動の速さは <span>00</span> を入力しても少しずつ動き始めます。
+            </p>
+            <p>
+                <span class="write">書き込みボタン</span> を押すと、
+                <span class="piston">VorzePiston</span> の場合は移動先まで移動し、
+                それ以外の場合は回転し続けます。
+            </p>
+            <p>
+                それでは vV Tester をご利用ください。
+            </p>
+        </div>
+        <div class="open-close-div"><input value="リンク" id="link-button" type="button"></div>
+        <dl id="link">
+            <dt><a href="https://www.patreon.com/posts/vv-tester-117437180">Patreon</a></dt>
+            <dd>
+                メッセージを送ったり、支援をしてくださるとうれしいです。
+                （申し訳ありませんが支援に関しては準備中です。）
+            </dd>
+            <dt><a href="https://github.com/vulpine-vixen/tester">GitHub</a></dt>
+            <dd>拙作ですがこのツールのプログラムを見たりできます。</dd>
+            <dt><a href="https://vulpine-vixen.com/">vulpineVixen</a></dt>
+            <dd>作者の公式サイトです。</dd>
+        </dl>
+        <script src="./main.js" defer></script>
     </body>
 </html>
